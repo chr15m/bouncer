@@ -1,2 +1,2 @@
--e git+https://github.com/dpallot/simple-websocket-server.git#egg=simple-websocket-server
+-e git+https://github.com/Pithikos/python-websocket-server.git#egg=python-websocket-server
 hy==0.12
