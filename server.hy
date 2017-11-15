@@ -28,7 +28,7 @@
   (server.send_message_to_all message))
 
 (let [clients []]
-  (let [server (WebsocketServer (.get environ "BOUNCE_PORT" 8123))]
+  (let [server (WebsocketServer (.get environ "BOUNCE_PORT" 8123) (.get environ "BOUNCE_HOST" "0.0.0.0"))]
     (server.set_fn_new_client (partial handle-connect clients))
     (server.set_fn_client_left (partial handle-disconnect clients))
     (server.set_fn_message_received (partial handle-message clients))
