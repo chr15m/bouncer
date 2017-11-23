@@ -18,13 +18,13 @@
 (setv sys.stdout (os.fdopen (sys.stdout.fileno) "w" 0))
 
 (defn handle-connect [clients client server]
-  (print "-> connected:" (.get client "address")))
+  (print "-> connected:" (.get (or client {}) "address" "?")))
 
 (defn handle-disconnect [clients client server]
-  (print "-> disconnected:" (.get client "address")))
+  (print "-> disconnected:" (.get (or client {}) "address" "?")))
 
 (defn handle-message [clients client server message]
-  (print "<- message:" (.get client "address") message)
+  (print "<- message:" (.get (or client {}) "address" "?") message)
   (server.send_message_to_all message))
 
 (let [clients []]
