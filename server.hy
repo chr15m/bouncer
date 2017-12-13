@@ -1,3 +1,4 @@
+#!/usr/bin/env hy
 (import
   [os]
   [sys]
