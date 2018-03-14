@@ -1,0 +1,4 @@
+#!/bin/sh
+
+. ./virtualenv/bin/activate
+./server.hy 2>&1 > log
